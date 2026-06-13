@@ -23,7 +23,7 @@ export default function AboutServices() {
       <div className="border-t border-[rgba(255,255,255,0.08)] my-12" />
 
       <h2 className="text-[11px] text-[#888888] uppercase tracking-[0.12em] font-semibold mb-8">
-        Services
+        How we Work
       </h2>
       <div className="space-y-0">
         {services.map((service, index) => (
