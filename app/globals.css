@@ -23,6 +23,30 @@ body {
   }
 }
 
+/* ─── Blur + fade-in — scroll triggered ──────────────────── */
+@keyframes blur-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Elements start invisible */
+.fade-in {
+  opacity: 0;
+}
+
+/* Triggered by IntersectionObserver via JS */
+.fade-in.is-visible {
+  animation: blur-fade-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+
+/* ─── Reduced motion — disable all animation ─────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -30,5 +54,9 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .fade-in {
+    opacity: 1;
   }
 }

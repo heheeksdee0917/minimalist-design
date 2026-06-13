@@ -10,10 +10,11 @@ export default function Contact() {
         Let&apos;s work together
       </h1>
       <a
-        href="mailto:hello@minimalistdesign.my"
+        href="mailto:
+        office@minimalistdesign.tv"
         className="text-[20px] text-[#F5F5F5] hover:underline transition-all duration-200"
       >
-        hello@minimalistdesign.my
+        office@minimalistdesign.tv
       </a>
       <p className="text-[14px] text-[#888888] mt-6">
         Kuala Lumpur, Malaysia
