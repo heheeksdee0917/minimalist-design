@@ -6,10 +6,13 @@ export default function AboutFirm() {
       </h2>
       <div className="space-y-6 text-[17px] text-[#F5F5F5] leading-[1.75] font-normal">
         <p>
-          Minimalist Design is a Kuala Lumpur-based studio specializing in luxury space planning and interior architecture for discerning homeowners and property developers across Malaysia. Our work is defined by a rigorous commitment to function, proportion, and material integrity.
+          Minimalist Design was established in 2004 as a space planning interior architecture and design consultancy firm. With our broad spectrum of expertise and knowledge, the company has continued to manifest itself in design excellence. Our firm believes in hands-on operations with attention to details. Through our extensive experience and proven track record, we have the ability to effectively plan and organize space as well as create “experience” within interior environment with a wide appeal
         </p>
         <p>
-          We believe that exceptional spaces emerge from restraint — from stripping away the unnecessary to reveal architecture that serves its purpose with clarity and grace. Every project is an exercise in editing, ensuring each element earns its place.
+          Its team of fully accredited interior designers are experienced in all genres of design work and able to orchestrate design not only within the studio but out of the Studio as well
+        </p>
+                <p>
+          Minimalist Design philosophy is simplicity. We have always aim to design spaces and interiors according to the appropriate architectural context, Our design concept is simplicity in order to achieve certain aspects of durability and timelessness. Quality is more important than quantity
         </p>
       </div>
     </div>
