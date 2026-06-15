@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { projects, type Project, type ProjectType } from '@/lib/projects';
 import ImagePlaceholder from '@/components/ImagePlaceholder';
+import { useInView } from '@/hooks/useInView';
 import Link from 'next/link';
 
 const filters: Array<ProjectType | 'All'> = ['All', 'Residential', 'Commercial', 'Mixed-Use'];
@@ -15,11 +16,21 @@ function ProjectCard({ project }: { project: Project }) {
         alt={project.name}
         src={project.cover}
       />
-      <div className="absolute inset-0 bg-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center">
+      <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)] opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center">
         <span className="text-[16px] text-[#F5F5F5] font-light">{project.name}</span>
         <span className="text-[13px] text-[#888888] mt-1">{project.location}</span>
       </div>
     </Link>
+  );
+}
+
+function AnimatedCard({ project, index }: { project: Project; index: number }) {
+  const ref = useInView<HTMLDivElement>({ delay: `${index * 0.05}s`, once: false });
+
+  return (
+    <div ref={ref} className="break-inside-avoid mb-2 fade-in">
+      <ProjectCard project={project} />
+    </div>
   );
 }
 
@@ -49,14 +60,13 @@ export default function PortfolioFilter() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-        {filteredProjects.map((project) => (
-          <div
-            key={project.id}
-            className="transition-opacity duration-250"
-          >
-            <ProjectCard project={project} />
-          </div>
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-2">
+        {filteredProjects.map((project, index) => (
+          <AnimatedCard
+            key={`${activeFilter}-${project.id}`}
+            project={project}
+            index={index}
+          />
         ))}
       </div>
     </>
