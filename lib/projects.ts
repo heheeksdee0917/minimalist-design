@@ -5,26 +5,27 @@ export interface Project {
   name: string;
   location: string;
   type: ProjectType;
-  cover: string | null;    // explicitly defined cover/thumbnail image
-  gallery: string[];       // additional images inside the project folder
+  cover: string | null;    
+  gallery: string[];      
   aspectRatio: string;
   year: number;
+  featured?: boolean;
 }
 
 export const projects: Project[] = [
-  // ── Public projects — images served from /public/projectImages/[ProjectName]/
   {
     id: 'pavillion-hill',
     name: 'Pavillion Hill',
     location: 'Kuala Lumpur',
     type: 'Residential',
-    cover: '/projectImages/Demo1/Demo1_1.jpg',
+    cover: '/projectImages/Demo1/Demo1_1.png',
     gallery: [
-      '/projectImages/Demo1/Demo1_1.jpg',
-      '/projectImages/Demo1/Demo1_2.jpg',
+      '/projectImages/Demo1/Demo1_1.png',
+      '/projectImages/Demo1/Demo1_2.png',
   ],
     aspectRatio: '4/3',
     year: 2024,
+    featured: true,
   },
   {
     id: 'the-alba-glomac',
@@ -39,44 +40,47 @@ export const projects: Project[] = [
     ],
     aspectRatio: '3/4',
     year: 2024,
+    featured: true,
   },
   {
     id: 'desa-parkcity',
     name: 'Desa ParkCity Residence',
     location: 'Kepong',
     type: 'Residential',
-    cover: '/projectImages/Demo2/Demo3_1.jpg',
+    cover: '/projectImages/Demo3/Demo3_1.jpg',
     gallery: [
-      '/projectImages/Demo2/Demo3_1.jpg',
-      '/projectImages/Demo2/Demo3_2.jpg',
-      '/projectImages/Demo2/Demo3_3.jpg',
-      '/projectImages/Demo2/Demo3_4.jpg',
-      '/projectImages/Demo2/Demo3_5.jpg'
+      '/projectImages/Demo3/Demo3_1.jpg',
+      '/projectImages/Demo3/Demo3_2.jpg',
+      '/projectImages/Demo3/Demo3_3.jpg',
+      '/projectImages/Demo3/Demo3_4.jpg',
+      '/projectImages/Demo3/Demo3_5.jpg'
     ],
     aspectRatio: '16/9',
     year: 2023,
+    featured: true,
   },
   {
     id: 'eight-skw',
     name: 'Eight SKW',
     location: 'Damansara Heights',
     type: 'Commercial',
-    cover: '/projectImages/Demo2/Demo4_1.jpg',
+    cover: '/projectImages/Demo4/Demo4_1.jpg',
     gallery: [
-      '/projectImages/Demo2/Demo4_1.jpg',
-      '/projectImages/Demo2/Demo4_2.jpg',
-      '/projectImages/Demo2/Demo4_3.jpg',
-      '/projectImages/Demo2/Demo4_4.jpg'
+      '/projectImages/Demo4/Demo4_1.jpg',
+      '/projectImages/Demo4/Demo4_2.jpg',
+      '/projectImages/Demo4/Demo4_3.jpg',
+      '/projectImages/Demo4/Demo4_4.jpg'
     ],
     aspectRatio: '4/3',
     year: 2023,
+    featured: true,
   },
   {
     id: 'klcc-tridences',
     name: 'KLCC Tridences',
     location: 'Kuala Lumpur',
     type: 'Mixed-Use',
-    cover: '/projectImages/klcc-tridences/cover.jpg',
+    cover: null,
     gallery: [],
     aspectRatio: '4/3',
     year: 2023,

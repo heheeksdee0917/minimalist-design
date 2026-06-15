@@ -1,21 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { projects, type ProjectType } from '@/lib/projects';
+import { projects, type Project, type ProjectType } from '@/lib/projects';
 import ImagePlaceholder from '@/components/ImagePlaceholder';
 import Link from 'next/link';
 
 const filters: Array<ProjectType | 'All'> = ['All', 'Residential', 'Commercial', 'Mixed-Use'];
-
-interface Project {
-  id: string;
-  name: string;
-  location: string;
-  type: ProjectType;
-  image: string | null;
-  aspectRatio: string;
-  year: number;
-}
 
 function ProjectCard({ project }: { project: Project }) {
   return (
@@ -23,7 +13,7 @@ function ProjectCard({ project }: { project: Project }) {
       <ImagePlaceholder
         aspectRatio={project.aspectRatio}
         alt={project.name}
-        src={project.image}
+        src={project.cover}
       />
       <div className="absolute inset-0 bg-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center">
         <span className="text-[16px] text-[#F5F5F5] font-light">{project.name}</span>

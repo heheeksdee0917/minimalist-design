@@ -11,7 +11,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
       <ImagePlaceholder
         aspectRatio="16/9"
         alt={project.name}
-        src={project.image}
+        src={project.cover}
       />
     </div>
   );
