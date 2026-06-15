@@ -5,35 +5,102 @@ export interface Project {
   name: string;
   location: string;
   type: ProjectType;
-  image: string | null;
+  cover: string | null;    // explicitly defined cover/thumbnail image
+  gallery: string[];       // additional images inside the project folder
   aspectRatio: string;
   year: number;
 }
 
 export const projects: Project[] = [
-  { id: 'pavillion-hill', name: 'Pavillion Hill', location: 'Kuala Lumpur', type: 'Residential', image: null, aspectRatio: '4/3', year: 2024 },
-  { id: 'the-alba-glomac', name: 'The Alba @ Glomac', location: 'Petaling Jaya', type: 'Commercial', image: null, aspectRatio: '3/4', year: 2024 },
-  { id: 'desa-parkcity', name: 'Desa ParkCity Residence', location: 'Kepong', type: 'Residential', image: null, aspectRatio: '16/9', year: 2023 },
-  { id: 'eight-skw', name: 'Eight SKW', location: 'Damansara Heights', type: 'Commercial', image: null, aspectRatio: '4/3', year: 2023 },
-  { id: 'klcc-tridences', name: 'KLCC Tridences', location: 'Kuala Lumpur', type: 'Mixed-Use', image: null, aspectRatio: '4/3', year: 2023 },
-  { id: 'tropicana-gardens', name: 'Tropicana Gardens', location: 'Kota Damansara', type: 'Residential', image: null, aspectRatio: '3/4', year: 2023 },
-  { id: 'mrt-kajang-line', name: 'MRT Kajang Line Stations', location: 'Kajang', type: 'Commercial', image: null, aspectRatio: '16/9', year: 2022 },
-  { id: 'seventeen-damansara', name: 'Seventeen @ Damansara', location: 'Damansara Heights', type: 'Mixed-Use', image: null, aspectRatio: '4/3', year: 2022 },
-  { id: 'one-medeniaga', name: 'One Medeniaga', location: 'Damansara Heights', type: 'Residential', image: null, aspectRatio: '4/3', year: 2022 },
-  { id: 'emerald-putrajaya', name: 'Emerald Putrajaya', location: 'Putrajaya', type: 'Residential', image: null, aspectRatio: '3/4', year: 2022 },
-  { id: 'ttdi-crescent', name: 'TTDI Crescent House', location: 'Taman Tun Dr Ismail', type: 'Residential', image: null, aspectRatio: '16/9', year: 2021 },
-  { id: 'menara-ikhlas', name: 'Menara Ikhlas', location: 'Changkat Kiara', type: 'Commercial', image: null, aspectRatio: '4/3', year: 2021 },
-  { id: 'bukit-bintang-suite', name: 'Bukit Bintang Suite', location: 'Kuala Lumpur', type: 'Mixed-Use', image: null, aspectRatio: '4/3', year: 2021 },
-  { id: 'alam-impias', name: 'Alam Impias Residence', location: 'Shah Alam', type: 'Residential', image: null, aspectRatio: '3/4', year: 2021 },
-  { id: 'the-linc-kl', name: 'The LINC KL', location: 'Jalan Ampang', type: 'Commercial', image: null, aspectRatio: '16/9', year: 2020 },
-  { id: 'bandar-utama', name: 'Bandar Utama Hub', location: 'Bandar Utama', type: 'Mixed-Use', image: null, aspectRatio: '4/3', year: 2020 },
-  { id: 'kiara-bay', name: 'Kiara Bay Residence', location: 'Mont Kiara', type: 'Residential', image: null, aspectRatio: '4/3', year: 2020 },
-  { id: 'kota-kemuning', name: 'Kota Kemuning Villa', location: 'Kota Kemuning', type: 'Residential', image: null, aspectRatio: '3/4', year: 2020 },
-  { id: 'pavillion-damansara', name: 'Pavillion Damansara Heights', location: 'Damansara Heights', type: 'Mixed-Use', image: null, aspectRatio: '16/9', year: 2019 },
-  { id: 'seni-mont-kiara', name: 'SENI @ Mont Kiara', location: 'Mont Kiara', type: 'Residential', image: null, aspectRatio: '4/3', year: 2019 },
-  { id: 'pj-trade-centre', name: 'PJ Trade Centre', location: 'Petaling Jaya', type: 'Commercial', image: null, aspectRatio: '4/3', year: 2019 },
-  { id: 'jln-maharajalela', name: 'Jalan Maharajalela', location: 'Kuala Lumpur', type: 'Residential', image: null, aspectRatio: '3/4', year: 2018 },
-  { id: 'sierra-petas', name: 'Sierra Petas', location: 'Shah Alam', type: 'Residential', image: null, aspectRatio: '4/3', year: 2018 },
+  // ── Public projects — images served from /public/projectImages/[ProjectName]/
+  {
+    id: 'pavillion-hill',
+    name: 'Pavillion Hill',
+    location: 'Kuala Lumpur',
+    type: 'Residential',
+    cover: '/projectImages/Demo1/Demo1_1.jpg',
+    gallery: [
+      '/projectImages/Demo1/Demo1_1.jpg',
+      '/projectImages/Demo1/Demo1_2.jpg',
+  ],
+    aspectRatio: '4/3',
+    year: 2024,
+  },
+  {
+    id: 'the-alba-glomac',
+    name: 'The Alba @ Glomac',
+    location: 'Petaling Jaya',
+    type: 'Commercial',
+    cover: '/projectImages/Demo2/Demo2_1.jpg',
+    gallery: [
+      '/projectImages/Demo2/Demo2_1.jpg',
+      '/projectImages/Demo2/Demo2_2.jpg',
+      '/projectImages/Demo2/Demo2_3.jpg'
+    ],
+    aspectRatio: '3/4',
+    year: 2024,
+  },
+  {
+    id: 'desa-parkcity',
+    name: 'Desa ParkCity Residence',
+    location: 'Kepong',
+    type: 'Residential',
+    cover: '/projectImages/Demo2/Demo3_1.jpg',
+    gallery: [
+      '/projectImages/Demo2/Demo3_1.jpg',
+      '/projectImages/Demo2/Demo3_2.jpg',
+      '/projectImages/Demo2/Demo3_3.jpg',
+      '/projectImages/Demo2/Demo3_4.jpg',
+      '/projectImages/Demo2/Demo3_5.jpg'
+    ],
+    aspectRatio: '16/9',
+    year: 2023,
+  },
+  {
+    id: 'eight-skw',
+    name: 'Eight SKW',
+    location: 'Damansara Heights',
+    type: 'Commercial',
+    cover: '/projectImages/Demo2/Demo4_1.jpg',
+    gallery: [
+      '/projectImages/Demo2/Demo4_1.jpg',
+      '/projectImages/Demo2/Demo4_2.jpg',
+      '/projectImages/Demo2/Demo4_3.jpg',
+      '/projectImages/Demo2/Demo4_4.jpg'
+    ],
+    aspectRatio: '4/3',
+    year: 2023,
+  },
+  {
+    id: 'klcc-tridences',
+    name: 'KLCC Tridences',
+    location: 'Kuala Lumpur',
+    type: 'Mixed-Use',
+    cover: '/projectImages/klcc-tridences/cover.jpg',
+    gallery: [],
+    aspectRatio: '4/3',
+    year: 2023,
+  },
+
+  // ── Remaining projects — placeholders until images are uploaded
+  { id: 'tropicana-gardens', name: 'Tropicana Gardens', location: 'Kota Damansara', type: 'Residential', cover: null, gallery: [], aspectRatio: '3/4', year: 2023 },
+  { id: 'mrt-kajang-line', name: 'MRT Kajang Line Stations', location: 'Kajang', type: 'Commercial', cover: null, gallery: [], aspectRatio: '16/9', year: 2022 },
+  { id: 'seventeen-damansara', name: 'Seventeen @ Damansara', location: 'Damansara Heights', type: 'Mixed-Use', cover: null, gallery: [], aspectRatio: '4/3', year: 2022 },
+  { id: 'one-medeniaga', name: 'One Medeniaga', location: 'Damansara Heights', type: 'Residential', cover: null, gallery: [], aspectRatio: '4/3', year: 2022 },
+  { id: 'emerald-putrajaya', name: 'Emerald Putrajaya', location: 'Putrajaya', type: 'Residential', cover: null, gallery: [], aspectRatio: '3/4', year: 2022 },
+  { id: 'ttdi-crescent', name: 'TTDI Crescent House', location: 'Taman Tun Dr Ismail', type: 'Residential', cover: null, gallery: [], aspectRatio: '16/9', year: 2021 },
+  { id: 'menara-ikhlas', name: 'Menara Ikhlas', location: 'Changkat Kiara', type: 'Commercial', cover: null, gallery: [], aspectRatio: '4/3', year: 2021 },
+  { id: 'bukit-bintang-suite', name: 'Bukit Bintang Suite', location: 'Kuala Lumpur', type: 'Mixed-Use', cover: null, gallery: [], aspectRatio: '4/3', year: 2021 },
+  { id: 'alam-impias', name: 'Alam Impias Residence', location: 'Shah Alam', type: 'Residential', cover: null, gallery: [], aspectRatio: '3/4', year: 2021 },
+  { id: 'the-linc-kl', name: 'The LINC KL', location: 'Jalan Ampang', type: 'Commercial', cover: null, gallery: [], aspectRatio: '16/9', year: 2020 },
+  { id: 'bandar-utama', name: 'Bandar Utama Hub', location: 'Bandar Utama', type: 'Mixed-Use', cover: null, gallery: [], aspectRatio: '4/3', year: 2020 },
+  { id: 'kiara-bay', name: 'Kiara Bay Residence', location: 'Mont Kiara', type: 'Residential', cover: null, gallery: [], aspectRatio: '4/3', year: 2020 },
+  { id: 'kota-kemuning', name: 'Kota Kemuning Villa', location: 'Kota Kemuning', type: 'Residential', cover: null, gallery: [], aspectRatio: '3/4', year: 2020 },
+  { id: 'pavillion-damansara', name: 'Pavillion Damansara Heights', location: 'Damansara Heights', type: 'Mixed-Use', cover: null, gallery: [], aspectRatio: '16/9', year: 2019 },
+  { id: 'seni-mont-kiara', name: 'SENI @ Mont Kiara', location: 'Mont Kiara', type: 'Residential', cover: null, gallery: [], aspectRatio: '4/3', year: 2019 },
+  { id: 'pj-trade-centre', name: 'PJ Trade Centre', location: 'Petaling Jaya', type: 'Commercial', cover: null, gallery: [], aspectRatio: '4/3', year: 2019 },
+  { id: 'jln-maharajalela', name: 'Jalan Maharajalela', location: 'Kuala Lumpur', type: 'Residential', cover: null, gallery: [], aspectRatio: '3/4', year: 2018 },
+  { id: 'sierra-petas', name: 'Sierra Petas', location: 'Shah Alam', type: 'Residential', cover: null, gallery: [], aspectRatio: '4/3', year: 2018 },
 ];
 
 export function getProjectById(id: string): Project | undefined {
